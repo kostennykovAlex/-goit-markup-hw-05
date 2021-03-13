@@ -143,24 +143,18 @@
 					<h2 class="title-attachment">Чем мы занимаемся</h2>
 					<ul class="duties-work list">
 						<li class="duties-solutions">
-							<a href="#" class="link">
-								<img src="./img/What-we-are/desktop.jpg" alt="Десктоп" width="370" height="295" />
-								<h3>Десктопные приложения</h3>
-							</a>
+							<img src="./img/What-we-are/desktop.jpg" alt="Десктоп" width="370" height="295" />
+							<h3>Десктопные приложения</h3>
 						</li>
 
 						<li class="duties-solutions">
-							<a href="#" class="link">
-								<img src="./img/What-we-are/mobile.jpg" alt="Mобильные приложения" width="370" height="295" />
-								<h3>Мобильные приложения</h3>
-							</a>
+							<img src="./img/What-we-are/mobile.jpg" alt="Mобильные приложения" width="370" height="295" />
+							<h3>Мобильные приложения</h3>
 						</li>
 
 						<li class="duties-solutions">
-							<a href="#" class="link">
-								<img src="./img/What-we-are/solutions.jpg" alt="Дизайнерские решения" width="370" height="295" />
-								<h3>Дизайнерские решения</h3>
-							</a>
+							<img src="./img/What-we-are/solutions.jpg" alt="Дизайнерские решения" width="370" height="295" />
+							<h3>Дизайнерские решения</h3>
 						</li>
 					</ul>
 				</div>
@@ -432,7 +426,9 @@
 						</address>
 					</div>
 					<div class="footer-contacts-block">
-						<p class="call-to-action">присоединяйтесь</p>
+						<p class="call-to-action">
+							<b>присоединяйтесь</b>
+						</p>
 						<ul class="footer-contacts-social-link list">
 							<li class="footer-social-links-item">
 								<a href="" class="link">
@@ -469,18 +465,74 @@
 						</ul>
 					</div>
 				</div>
+				<div>
+					<div class="footer-information form">
+						<label class="call-to-action" for="footer-email-input">
+							<b>подпишитесь на рассылку</b>
+						</label>
+
+						<form class="js-speaker-form">
+							<label for="mail"></label>
+							<input class="footer-input-size" type="email" name="mail" id="mail" />
+
+							<button class="footer-button" type="submit">Подписаться</button>
+							<br />
+						</form>
+					</div>
+				</div>
 			</div>
 		</footer>
+		<div class="container">
+			<div class="test">
+				<form class="js-speaker-form">
+					<label for="name">Имя</label>
+					<input type="text" name="name" id="name" />
+					<br />
 
-		<div class="modal-backdrop is-hidden" data-modal>
-			<div class="modal">
-				<button class="close-button" data-modal-close>
-					<svg class="close-button-icon">
-						<use href="./img/iconmoon/sprite.svg#icon-close-black-18dp-2-1"></use>
-					</svg>
-				</button>
+					<label for="tel">Телефон</label>
+					<input type="tel" name="tel" id="tel" />
+					<br />
+
+					<label for="mail">Mail</label>
+					<input type="email" name="mail" id="mail" />
+					<br />
+
+					<input type="checkbox" name="topik" value="html" id="html" />
+					<label for="html">HTML</label>
+
+					<input type="checkbox" name="topik" value="css" id="css" />
+					<label for="css">CSS</label>
+
+					<input type="checkbox" name="topik" value="js" id="js" />
+					<label for="js">JavaScript</label>
+
+					<button type="submit">Оставить заявку</button>
+					<input type="checkbox" name="" id="" />
+					<br />
+				</form>
+			</div>
+			<div class="modal-backdrop is-hidden" data-modal>
+				<div class="modal">
+					<button class="close-button" data-modal-close>
+						<svg class="close-button-icon">
+							<use href="./img/iconmoon/sprite.svg#icon-close-black-18dp-2-1"></use>
+						</svg>
+					</button>
+				</div>
 			</div>
 		</div>
+
 		<script src="./js/modal.js"></script>
+		<script>
+			;(() => {
+				document.querySelector(".js-speaker-form").addEventListener("submit", e => {
+					e.preventDefault()
+
+					new FormData(e.currentTarget).forEach((value, name) => console.log(`${name}: ${value}`))
+
+					e.currentTarget.reset()
+				})
+			})()
+		</script>
 	</body>
 </html>

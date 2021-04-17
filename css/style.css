@@ -214,8 +214,8 @@ body {
 	margin-right: 50px;
 }
 
-.address-item .link:hover,
-.address-item .link:focus {
+.address .link:hover,
+.address .link:focus {
 	color: var(--accent-color);
 	cursor: pointer;	
 }
@@ -750,7 +750,7 @@ body {
 	font-size: 26px;
 	line-height: 1.192;
 	text-decoration: none;
-	
+
 	margin-right: 75px;
 	margin-bottom: 20px;
 	/* identical to box height */
